@@ -1,0 +1,59 @@
+1. Credentials 
+
+Both: /usr/share/certificates/aws_ssh_cert.pem
+LAMP, Python 
+ec2-35-158-221-70.eu-central-1.compute.amazonaws.com
+General, Docker
+ec2-52-59-227-89.eu-central-1.compute.amazonaws.com
+Both -- security group "nova-security-grupa-1" (SSH, HTTP). 
+
+HTTP (outb.) test: #Test -- with HTTP for IP entered in SG via the web interface    #Done - with name "Biblioteka". 
+http://ec2-35-158-221-70.eu-central-1.compute.amazonaws.com/python-test-1.html    #Works. 
+
+2. Installed boto3 and awscli, and did their setup
+
+
+3. Idea I: get HTTP access for the current IP 
+      How: create the rule in a security group 
+
+3.1 Prerequisite 1: the HTTP rule should be absent ---(line 10 here)--
+---> I removed it via the web interface --> Done. 
+
+3.2 Prerequisite 2: set up access via IAM 
+
+/home/user1/.aws/config/region #Or select a region inside a .py
+
+I created the user "aws_sdk_user" with programmatic access; give it the permissions of "amazonec2fullaccess"; saved the key "aws_sdk_user_credentials.csv". 
+
+#Users with AWS Management Console access can sign-in at: #https://962606805205.signin.aws.amazon.com/console
+
+/home/user1/.aws/credentials/rootkey.aws_sdk_user_credentials.csv
+
+aws configure 
+and then list instances 
+#EasterRabbitS: grep "aws_sdk-bash.txt" for "echo" 
+
+! 4.1 Create the rule (in "aws_sdk_sandbox.py") 
+https://boto3.readthedocs.io/en/latest/reference/services/ec2.html#EC2.Client.authorize_security_group_ingress
+
+4.2 Start writing into "aws_sdk.py"
+4.2.1 Test by describe_instances 
+Works! # it. 
+4.2.2 Copy-paste the SG rule from "aws_sdk_sandbox.py" 
+
+There the rule is with flag "DryRun". 
+
+Run the script. --> Works! ("botocore.exceptions.ClientError: An error occurred (DryRunOperation) when calling the AuthorizeSecurityGroupIngress operation: Request would have succeeded, but DryRun flag is set.")
+
+5. Set DryRun flag to "False"   #Done. 
+Error: "... botocore.exceptions.ClientError: An error occurred (InvalidParameterCombination) when calling the AuthorizeSecurityGroupIngress operation: The parameter 'ipPermissions' may not be used in combination with 'ipProtocol'
+"
+
+Reason: not reading the documentation carefully. "ipProtocol" is "(VPC only)". 
+
+Another error: "... botocore.exceptions.ClientError: An error occurred (InvalidParameterCombination) when calling the AuthorizeSecurityGroupIngress operation: The parameter 'ipPermissions' may not be used in combination with 'fromPort'"
+
+# And two analogous # 
+
+I read the documentation and fixed the script. 
+
