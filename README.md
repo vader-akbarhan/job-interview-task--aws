@@ -1,0 +1,2 @@
+# job-interview-task--aws
+I am appying for a job as a very junior Linux system administrator who is learning Python. I asked the recruiter via the phone: "What should I learn before coming?" She said: "Well, there is a Python library for Amazon Web Sevices." "Eh... OK. See you." (I.e. I have not used neither libraries not AWS. But I shall try. Maybe I would enjoy the water before learning to swim.) 
