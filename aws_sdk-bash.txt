@@ -293,3 +293,39 @@ YES!
 exit
 
 Script done on Tue 09 Jan 2018 07:12:39 PM EET
+Script started on Tue 09 Jan 2018 10:18:09 PM EET
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo '"Amazon Simple Storage Service (Amazon S3) is a web service that provides highly scalable cloud storage . Amazon S3 provides easy to use object storage, with a simple web service interface to store and get any amount of data from anywhere on the web." '
+"Amazon Simple Storage Service (Amazon S3) is a web service that provides highly scalable cloud storage. Amazon S3 provides easy to use object storage, with a simple web service interface to store and get any amount of data from anywhere on the web." 
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m "[K#[Kecho 'I think I got the 'knack'[K[K[K[K[K[K[K'k[K[K:[K"knack" of them quotes.[K! '
+I think I got the "knack" of them quotes! 
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo '"Amazon S3 is cloud storage for the Internet. To upload your data (photos, videos, documents etc.), you  first create a bucket in one of the AWS Regions. You can then upload any number of objects to the bucket.
+> 
+> In terms of implementation, buckets and objects are resources, and Amazon S3 provides APIs for you to manage them. For example, you can create a bucket and upload obj ects using the Amazon S3 API. You can also use the Amazon S3 console to perform these operations. The console internally uses the Amazon S3 APIs to send requests to Ama zon S3. "'
+"Amazon S3 is cloud storage for the Internet. To upload your data (photos, videos, documents etc.), you first create a bucket in one of the AWS Regions. You can then upload any number of objects to the bucket.
+
+In terms of implementation, buckets and objects are resources, and Amazon S3 provides APIs for you to manage them. For example, you can create a bucket and upload objects using the Amazon S3 API. You can also use the Amazon S3 console to perform these operations. The console internally uses the Amazon S3 APIs to send requests to Amazon S3. "
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo '# So, I guess buckets are some kind of logical volumes. Maybe something like the building blocks of the  logical volumes of Logical Volume Manager. '
+# So, I guess buckets are some kind of logical volumes. Maybe something like the building blocks of the logical volumes of Logical Volume Manager. 
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo [K[K[K[K[K
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m 
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m 
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo "[K'Let's create a bo[Kucket."[K'
+> bash: unexpected EOF while looking for matching `''
+bash: syntax error: unexpected end of file
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo 'Let's create a bucket.'[K"[1P[1@"
+Let's create a bucket.
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m pyt[K[K[Kpython aws_sdk-[K_sandbox.py bucker[Kt-test[K[K[K[K[Kt[Kfor[K[K[K1
+An error occurred (IllegalLocationConstraintException) when calling the CreateBucket operation: The unspecified location constraint is incompatible for the region specific endpoint this request was sent to.
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m ^C
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo "I would add LocationConstraint"
+I would add LocationConstraint
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo "I would add LocationConstraint"[4Ppython aws_sdk_sandbox.py bucket1[K[K[K[K[K[K[K[K kofa-2[K[K[K[K[K[Kzelena_ko[K[Kkofa
+An error occurred (InvalidBucketName) when calling the CreateBucket operation: The specified bucket is not valid.
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m python aws_sdk_sandbox.py zelena_kofa[1Pkofa-kofa
+s3.Bucket(name='zelena-kofa')
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m |[Kecho "Works."
+Works.
+]0;user1@mountaineer /media/user1/New Volume/IT studies/AWS[01;32muser1@mountaineer[00m [01;34m/media/user1/New Volume/IT studies/AWS $[00m echo "Works."[Kecho "Works."python aws_sdk_sandbox.py zelena-kofa_kofaecho "I would add LocationConstraint"[4Ppython aws_sdk_sandbox.py bucket1[4Pecho "Let's create a bucket."python aws_sdk_sandbox.py bucket1echo "I would add LocationConstraint"python aws_sdk_sandbox.py zelena_kofa-kofa[24Pecho "Works."[Kexit
+exit
+
+Script done on Wed 10 Jan 2018 12:29:35 PM EET
