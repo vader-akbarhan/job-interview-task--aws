@@ -55,5 +55,42 @@ Another error: "... botocore.exceptions.ClientError: An error occurred (InvalidP
 
 # And two analogous # 
 
-I read the documentation and fixed the script. 
+I read the documentation and fixed the script. A new execution...
+It works! #
 
+
+6. Idea 2: do something with S3  
+6.2 What is S3... 
+
+    script -a aws_sdk-bash.txt 
+
+"Amazon Simple Storage Service (Amazon S3) is a web service that provides highly scalable cloud storage. Amazon S3 provides easy to use object storage, with a simple web service interface to store and get any amount of data from anywhere on the web." 
+
+"Amazon S3 is cloud storage for the Internet. To upload your data (photos, videos, documents etc.), you first create a bucket in one of the AWS Regions. You can then upload any number of objects to the bucket.
+
+In terms of implementation, buckets and objects are resources, and Amazon S3 provides APIs for you to manage them. For example, you can create a bucket and upload objects using the Amazon S3 API. You can also use the Amazon S3 console to perform these operations. The console internally uses the Amazon S3 APIs to send requests to Amazon S3. "
+
+# So, I guess buckets are some kind of logical volumes. Maybe something like the building blocks of the logical volumes of Logical Volume Manager. 
+
+And "Amazon S3 bucket names are globally unique, regardless of the AWS Region in which you create the bucket." So, these encompass the greatest global cloud pool of servers. 
+
+6.3 Give the user "aws_sdk_user" "AmazonS3FullAccesss" permissions 
+
+6.4 Edit the file "aws_sdk.py" in a way that would organize it into separate actions (allow HTTP, upload a file) 
+
+6.5 Let's create a bucket (first test it in "aws_sdk_sandbox.py")
+
+"create_bucket" syntax: 
+http://boto3.readthedocs.io/en/latest/reference/services/s3.html?highlight=create_bucket#S3.Client.create_bucket
+
+I will pass the name of the bucker as a command line argument. 
+
+Error: 
+"An error occurred (IllegalLocationConstraintException) when calling the CreateBucket operation: The unspecified location constraint is incompatible for the region specific endpoint this request was sent to."
+
+This cloud work: #Yes, it works. 
+CreateBucketConfiguration={
+        'LocationConstraint': 'EU'|'eu-west-1'|'us-west-1'|'us-west-2'|'ap-south-1'|'ap-southeast-1'|'ap-southeast-2'|'ap-northeast-1'|'sa-east-1'|'cn-north-1'|'eu-central-1'
+    }
+
+Rewrite so that the name comes from keyboard input. #Works! 
